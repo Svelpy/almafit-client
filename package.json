@@ -14,7 +14,9 @@
 		"format": "prettier --write .",
 		"test:unit": "vitest",
 		"test": "npm run test:unit -- --run && npm run test:e2e",
-		"test:e2e": "playwright install && playwright test"
+		"test:e2e": "playwright install && playwright test",
+		"deploy": "pnpm build && wrangler deploy",
+		"preview:worker": "pnpm build && wrangler dev"
 	},
 	"devDependencies": {
 		"@eslint/js": "^10.0.1",
@@ -43,7 +45,8 @@
 		"typescript-eslint": "^8.60.1",
 		"vite": "^8.3.0",
 		"vitest": "^4.1.8",
-		"vitest-browser-svelte": "^2.1.1"
+		"vitest-browser-svelte": "^2.1.1",
+		"wrangler": "^4.168.0"
 	},
 	"imports": {
 		"#lib": "./src/lib/index.js",

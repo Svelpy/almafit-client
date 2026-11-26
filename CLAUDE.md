@@ -27,6 +27,8 @@ Panel routes use the UI terms: `/panel/productos/sabores` and `/panel/productos/
 ```sh
 pnpm dev                 # vite dev
 pnpm build / preview     # production build (adapter-cloudflare) / serve it
+pnpm deploy              # build + `wrangler deploy` to Cloudflare Workers (config in wrangler.jsonc)
+pnpm preview:worker      # build + `wrangler dev`: the real Worker locally on :8787 (the store 503s there: API CORS)
 pnpm check               # svelte-kit sync + svelte-check (run after adding routes: route types are generated)
 pnpm lint                # prettier --check . && eslint .
 pnpm format              # prettier --write .  (tabs, single quotes, width 100, tailwind class sorting)

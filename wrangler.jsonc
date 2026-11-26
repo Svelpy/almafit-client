@@ -1,0 +1,19 @@
+// Despliegue en Cloudflare Workers (adapter-cloudflare). `pnpm deploy` compila y sube.
+// VITE_API_ENDPOINT y PUBLIC_SITE_URL son estáticas: se fijan al compilar (.env / variables del build),
+// no en las variables del Worker.
+{
+	"$schema": "./node_modules/wrangler/config-schema.json",
+	"name": "almafit-client",
+	"main": ".svelte-kit/cloudflare/_worker.js",
+	"compatibility_date": "2026-11-01",
+	"compatibility_flags": ["nodejs_als"],
+	"assets": {
+		"binding": "ASSETS",
+		"directory": ".svelte-kit/cloudflare"
+	},
+	"observability": {
+		"enabled": true
+	}
+	// Dominio propio: descomentar cuando el DNS de svelpy.com esté en Cloudflare
+	// "routes": [{ "pattern": "almafit.svelpy.com", "custom_domain": true }]
+}
